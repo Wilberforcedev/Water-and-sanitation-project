@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Water for All">
+  <rect width="64" height="64" rx="18" fill="#073b4c"/>
+  <path d="M32 8C25 20 15 29 15 40a17 17 0 0 0 34 0C49 29 39 20 32 8Z" fill="#9af1dd"/>
+  <path d="M24 41c1 5 4 8 9 9" fill="none" stroke="#073b4c" stroke-width="3" stroke-linecap="round"/>
+</svg>
