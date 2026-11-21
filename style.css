@@ -210,7 +210,7 @@ body { font-size: 1rem; }
 .project-filter { display: flex; flex-wrap: wrap; gap: .45rem; }
 .filter-button {
   min-height: 44px; padding: .65rem .9rem; border: 1px solid var(--line);
-  border-radius: 999px; background: #fff; color: var(--deep); font: 700 .9rem inherit; cursor: pointer;
+  border-radius: 999px; background: #fff; color: var(--deep); font: inherit; font-weight: 700; font-size: .9rem; cursor: pointer;
 }
 .filter-button:hover, .filter-button[aria-pressed="true"] { border-color: var(--deep); background: var(--deep); color: #fff; }
 .project-results { min-height: 1.5rem; margin: -.45rem 0 1rem; color: var(--muted); font-size: .9rem; }
@@ -220,7 +220,7 @@ body { font-size: 1rem; }
 .contact-form label { display: grid; gap: .4rem; color: #fff; font-size: .95rem; font-weight: 700; }
 .contact-form select { appearance: none; padding-right: 2.6rem; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='m3 6 5 5 5-5' stroke='%23063c4a' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .9rem center; }
 .contact-form textarea { min-height: 140px; resize: vertical; }
-.contact-form .button { justify-self: start; cursor: pointer; font: 700 1rem inherit; }
+.contact-form .button { justify-self: start; cursor: pointer; font: inherit; font-weight: 700; }
 .form-note, .form-status { margin: 0; color: #d3e7e5; font-size: .9rem; }
 .form-status { min-height: 1.4em; }
 .whatsapp-link { display: inline-flex; align-items: center; gap: .5rem; margin-top: .5rem; color: var(--blue); font-weight: 700; }
