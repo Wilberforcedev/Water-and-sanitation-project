@@ -35,18 +35,41 @@
 <main id="main">
 <section class="page-hero"><div class="container"><span class="eyebrow">Get in touch</span><h1>Let’s start a conversation.</h1><p>Questions about our projects, volunteering or working together? Reach out to the team.</p></div></section>
 <section class="section"><div class="container contact-layout">
-<div class="contact-panel"><span class="kicker">Contact details</span><h2 style="font-size:1.8rem">We’d be glad to hear from you.</h2><div class="contact-method"><strong>Email</strong><a href="mailto:contact@waterforall.org">contact@waterforall.org</a></div><div class="contact-method"><strong>Phone</strong><a href="tel:+256751459337">+256 7514 59337</a></div><div class="contact-method"><strong>Address</strong><span>Plot 21 A, Port Bell Rd, Kampala</span></div></div>
-<div class="callout"><span class="kicker" style="color:#9af1dd">Send us a message</span><h2 style="font-size:2rem">Tell us what you have in mind.</h2><p>Email is the best way to reach us. It will open a message in your email app, where you can add your details and send it directly.</p><a class="button button-secondary" data-contact-email href="mailto:contact@waterforall.org?subject=Enquiry%20for%20Water%20for%20All">Email Water for All <span aria-hidden="true">↗</span></a></div>
+<div class="contact-panel"><span class="kicker">Contact details</span><h2 style="font-size:1.8rem">We’d be glad to hear from you.</h2><div class="contact-method"><strong>Email</strong><a href="mailto:contact@waterforall.org">contact@waterforall.org</a></div><div class="contact-method"><strong>Phone</strong><a href="tel:+256751459337">+256 7514 59337</a><br><a class="whatsapp-link" href="https://wa.me/256751459337" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a></div><div class="contact-method"><strong>Address</strong><span>Plot 21 A, Port Bell Rd, Kampala</span></div></div>
+<div class="callout contact-form-panel">
+  <span class="kicker" style="color:#9af1dd">Send us a message</span>
+  <h2 style="font-size:2rem">Tell us what you have in mind.</h2>
+  <p>Share a few details and we’ll prepare an email for you to review and send.</p>
+  <form class="contact-form" data-email-form>
+    <label for="contact-name">Your name
+      <input id="contact-name" name="name" autocomplete="name" required>
+    </label>
+    <label for="contact-email">Email address
+      <input id="contact-email" name="email" type="email" autocomplete="email" required>
+    </label>
+    <label for="contact-topic">What is this about?
+      <select id="contact-topic" name="topic" required>
+        <option value="">Choose a topic</option>
+        <option>Community water points</option>
+        <option>Water quality projects</option>
+        <option>Rainwater harvesting</option>
+        <option>Volunteering</option>
+        <option>Partnership or giving</option>
+        <option>Other</option>
+      </select>
+    </label>
+    <label for="contact-message">Message
+      <textarea id="contact-message" name="message" rows="5" maxlength="3000" required placeholder="Tell us how we can help."></textarea>
+    </label>
+    <button class="button button-secondary" type="submit">Prepare email</button>
+    <p class="form-note">This static site does not send or store messages. Your email app will open so you can review and send it.</p>
+    <p class="form-status" role="status" aria-live="polite"></p>
+  </form>
+</div>
 </div></section>
 </main>
 <footer class="site-footer"><div class="container footer-inner"><p>© 2026 Water for All. Clean water, shared progress.</p><nav class="footer-links" aria-label="Footer navigation"><a href="about.html">About</a><a href="projects.html">Projects</a><a href="get-involved.html">Get involved</a><a href="contact.html">Contact</a></nav></div></footer>
-<script>
-  const contactEmailLink = document.querySelector("[data-contact-email]");
-  const enquirySubject = new URLSearchParams(window.location.search).get("subject");
-  if (contactEmailLink && enquirySubject) {
-    contactEmailLink.href = `mailto:contact@waterforall.org?subject=${encodeURIComponent(enquirySubject)}`;
-  }
-</script>
+<script src="contact.js" defer></script>
   <script src="menu.js" defer></script>
 </body>
 </html>
