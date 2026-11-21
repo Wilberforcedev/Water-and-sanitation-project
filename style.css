@@ -149,3 +149,93 @@ p { margin: 0 0 1rem; color: var(--muted); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
+
+/* Water for All refresh: clearer hierarchy, livelier surfaces and useful controls */
+:root {
+  --ink: #12323b;
+  --muted: #526b73;
+  --deep: #063c4a;
+  --blue: #087f8c;
+  --aqua: #20aa98;
+  --pale: #e4f5f1;
+  --paper: #f5faf9;
+  --line: #d4e5e1;
+  --radius: 20px;
+  --shadow: 0 22px 60px rgba(6, 60, 74, .12);
+}
+body { font-size: 1rem; }
+.site-header { box-shadow: 0 4px 24px rgba(6,60,74,.045); }
+.nav-link { padding-block: .35rem; }
+.nav-link[aria-current="page"] { position: relative; }
+.nav-link[aria-current="page"]::after {
+  position: absolute; right: 0; bottom: -.35rem; left: 0; height: 2px;
+  background: var(--aqua); content: "";
+}
+.nav-cta { box-shadow: 0 8px 20px rgba(6,60,74,.16); }
+.hero {
+  background:
+    radial-gradient(circle at 82% 45%, rgba(32,170,152,.13), transparent 28rem),
+    linear-gradient(118deg, #e5f6f1 0%, #f1f8fa 58%, #d9eff3 100%);
+}
+.hero-art { min-height: 370px; }
+.water-orbit { width: min(370px, 75vw); }
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 92% 20%, rgba(32,170,152,.14), transparent 19rem),
+    linear-gradient(115deg, #e5f6f1, #eff7fa);
+}
+.page-hero::after {
+  position: absolute; right: -3rem; bottom: -8rem; width: 17rem; height: 17rem;
+  border: 1px solid rgba(8,127,140,.14); border-radius: 50%;
+  box-shadow: 0 0 0 2rem rgba(8,127,140,.035), 0 0 0 4rem rgba(8,127,140,.025);
+  content: ""; pointer-events: none;
+}
+.page-hero .container { position: relative; z-index: 1; }
+.card { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.card:hover { transform: translateY(-3px); border-color: #b8d9d3; box-shadow: 0 18px 40px rgba(6,60,74,.09); }
+.project-toolbar {
+  display: flex; align-items: end; justify-content: space-between; gap: 1rem;
+  margin-bottom: 1.4rem; padding: 1rem; border: 1px solid var(--line);
+  border-radius: 18px; background: white;
+}
+.project-search { display: grid; flex: 1; gap: .4rem; max-width: 440px; color: var(--deep); font-weight: 700; }
+.project-search input, .contact-form input, .contact-form select, .contact-form textarea {
+  width: 100%; min-height: 48px; padding: .75rem .9rem; border: 1px solid #bfd4d1;
+  border-radius: 12px; background: #fff; color: var(--ink); font: inherit;
+}
+.project-search input::placeholder, .contact-form input::placeholder, .contact-form textarea::placeholder { color: #70868c; }
+.project-filter { display: flex; flex-wrap: wrap; gap: .45rem; }
+.filter-button {
+  min-height: 44px; padding: .65rem .9rem; border: 1px solid var(--line);
+  border-radius: 999px; background: #fff; color: var(--deep); font: 700 .9rem inherit; cursor: pointer;
+}
+.filter-button:hover, .filter-button[aria-pressed="true"] { border-color: var(--deep); background: var(--deep); color: #fff; }
+.project-results { min-height: 1.5rem; margin: -.45rem 0 1rem; color: var(--muted); font-size: .9rem; }
+.project-empty { padding: 2rem; border: 1px dashed #9dbdb7; border-radius: var(--radius); text-align: center; }
+.contact-form-panel { align-self: stretch; }
+.contact-form { display: grid; gap: 1rem; margin-top: 1.2rem; }
+.contact-form label { display: grid; gap: .4rem; color: #fff; font-size: .95rem; font-weight: 700; }
+.contact-form select { appearance: none; padding-right: 2.6rem; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='m3 6 5 5 5-5' stroke='%23063c4a' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .9rem center; }
+.contact-form textarea { min-height: 140px; resize: vertical; }
+.contact-form .button { justify-self: start; cursor: pointer; font: 700 1rem inherit; }
+.form-note, .form-status { margin: 0; color: #d3e7e5; font-size: .9rem; }
+.form-status { min-height: 1.4em; }
+.whatsapp-link { display: inline-flex; align-items: center; gap: .5rem; margin-top: .5rem; color: var(--blue); font-weight: 700; }
+:where(a, button, input, select, textarea):focus-visible { outline-color: #0b6470; }
+@media (max-width: 800px) {
+  .project-toolbar { align-items: stretch; flex-direction: column; }
+  .project-search { max-width: none; }
+}
+@media (max-width: 560px) {
+  .hero-art { min-height: 250px; }
+  .water-orbit { width: 225px; }
+  .project-filter { display: grid; grid-template-columns: repeat(2, 1fr); }
+  .filter-button { width: 100%; }
+  .contact-form .button { justify-self: stretch; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card, .button { transition: none; }
+}
