@@ -16,6 +16,7 @@ A responsive, static website for the Water for All project.
 - Search and category filters for project focus areas.
 - Contact enquiry form that prepares a prefilled email in the visitor's email app.
 - Direct email, phone and WhatsApp contact options.
+- Native page sharing where supported, with a copy-link fallback.
 
 ## Contact form behavior
 
