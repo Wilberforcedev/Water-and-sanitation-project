@@ -29,5 +29,17 @@ if (menuButton && menu) {
     }
   });
 
-  window.matchMedia("(min-width: 801px)").addEventListener("change", () => setExpanded(false));
+  document.addEventListener("pointerdown", (event) => {
+    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+    if (isOpen && !menu.contains(event.target) && !menuButton.contains(event.target)) {
+      setExpanded(false);
+    }
+  });
+
+  const desktopBreakpoint = window.matchMedia("(min-width: 801px)");
+  if (desktopBreakpoint.addEventListener) {
+    desktopBreakpoint.addEventListener("change", () => setExpanded(false));
+  } else {
+    desktopBreakpoint.addListener(() => setExpanded(false));
+  }
 }
