@@ -239,3 +239,5 @@ body { font-size: 1rem; }
 @media (prefers-reduced-motion: reduce) {
   .card, .button { transition: none; }
 }
+
+.share-status { min-height: 1.5em; margin: .65rem 0 0; font-size: .92rem; }
